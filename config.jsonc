@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 4,
+
+    "modules-left": [
+        "ext/workspaces",
+        "custom/sep",
+        "ext/window",
+        "custom/sep"
+    ],
+    "modules-center": ["keyboard-state"],
+
+    "modules-right": [
+        "custom/sep",
+        "network",
+        "custom/sep",
+        "cpu",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "disk",
+        "custom/sep",
+        "clock",
+        "custom/sep",
+        "tray"
+    ],
+
+    "ext/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": ["HDMI-A-1"],
+            "2": ["HDMI-A-1"],
+            "3": ["HDMI-A-1"],
+            "4": ["HDMI-A-1"],
+            "5": ["HDMI-A-1"],
+            "6": ["DP-1"],
+            "7": ["DP-1"],
+            "8": ["DP-1"],
+            "9": ["DP-1"]
+        }
+    },
+
+    "ext/window": {
+        "max-length": 40,
+        "seperate-outputs": true
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "Mem: {used}GiB"
+    },
+    "disk": {
+        "interval": 60,
+        "path": "/",
+        "format": "Disk: {free}"
+    },
+
+"   keyboard-state": {
+  "   numlock": false,
+  "   capslock": false,
+  "   scrolllock": false,
+  "   format": "{name}"
+    },
+
+    "network": {
+        "format": "Online",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "custom/sep": {
+        "format": "|",
+        "interval": 0
+    }
+}
