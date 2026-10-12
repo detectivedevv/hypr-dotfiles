@@ -36,6 +36,7 @@ local browser     = "brave"
 local flameshot   = "flameshot"
 local clipboard   = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 local steam       = "flatpak run com.valvesoftware.Steam"
+local logout      = "wlogout"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -50,7 +51,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("easyeffects")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("picom")
 end)
 
 
@@ -116,10 +116,10 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 0.7,
+        inactive_opacity = 1.0,
 
         blur             = {
-            enabled           = true,
+            enabled           = false,
             size              = 10,
             passes            = 4,
             vibrancy          = 0.1696,
@@ -253,6 +253,7 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pkill waybar"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(steam))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(flameshot))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(logout))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
@@ -354,3 +355,4 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
