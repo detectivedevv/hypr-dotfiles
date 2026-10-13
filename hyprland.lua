@@ -274,7 +274,7 @@ for i = 1, 5 do
     hl.workspace_rule({ workspace = i, monitor = main })
 end
 
-for i = 6, 9 do
+for i = 6, 10 do
     hl.workspace_rule({ workspace = i, monitor = secondary })
 end
 
@@ -355,4 +355,3 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
-
